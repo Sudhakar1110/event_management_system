@@ -18,10 +18,8 @@ __pycache__/
 .idea/
 *.swp
 *.swo
+tags
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Frappe
-*.egg-info/
