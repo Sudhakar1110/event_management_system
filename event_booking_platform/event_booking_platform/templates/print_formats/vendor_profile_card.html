@@ -1,0 +1,135 @@
+<!-- Vendor Profile Card - Print Format -->
+<style>
+    .vendor-card {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .vendor-header {
+        text-align: center;
+        border-bottom: 2px solid #6C5CE7;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .vendor-name {
+        font-size: 28px;
+        color: #2D3436;
+        margin: 0;
+    }
+    .vendor-category {
+        font-size: 14px;
+        color: #6C5CE7;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .detail-row {
+        display: flex;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .detail-label {
+        font-weight: bold;
+        width: 140px;
+        color: #636E72;
+    }
+    .detail-value {
+        flex: 1;
+        color: #2D3436;
+    }
+    .rating-section {
+        background: #FFF3E0;
+        padding: 12px 16px;
+        border-radius: 8px;
+        margin: 16px 0;
+        text-align: center;
+    }
+    .rating-stars {
+        font-size: 24px;
+        color: #FFD700;
+    }
+    .description {
+        background: #F8F9FA;
+        padding: 16px;
+        border-radius: 8px;
+        margin: 16px 0;
+        line-height: 1.6;
+    }
+    .footer {
+        text-align: center;
+        margin-top: 24px;
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+        font-size: 12px;
+        color: #B2BEC3;
+    }
+    .badge {
+        display: inline-block;
+        background: #00B894;
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+</style>
+
+<div class="vendor-card">
+    <div class="vendor-header">
+        {% if doc.profile_image %}
+        <img src="{{ doc.profile_image }}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 12px;">
+        {% endif %}
+        <h1 class="vendor-name">{{ doc.vendor_name }}</h1>
+        <div class="vendor-category">{{ doc.vendor_category }}</div>
+        {% if doc.is_verified %}<span class="badge">✓ Verified</span>{% endif %}
+    </div>
+
+    <div class="rating-section">
+        {% set stars = doc.rating|int %}
+        <div class="rating-stars">
+            {% for i in range(stars) %}★{% endfor %}{% for i in range(5 - stars) %}☆{% endfor %}
+        </div>
+        <div>{{ doc.rating or 0 }} / 5 ({{ doc.total_reviews or 0 }} reviews)</div>
+    </div>
+
+    <div class="detail-row">
+        <span class="detail-label">Contact Person</span>
+        <span class="detail-value">{{ doc.contact_person or '-' }}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Phone</span>
+        <span class="detail-value">{{ doc.phone or '-' }}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Email</span>
+        <span class="detail-value">{{ doc.email or '-' }}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Location</span>
+        <span class="detail-value">{{ doc.city }}{% if doc.state %}, {{ doc.state }}{% endif %}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Price Range</span>
+        <span class="detail-value">₹{{ doc.min_price }} - ₹{{ doc.max_price or 'N/A' }}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Years in Business</span>
+        <span class="detail-value">{{ doc.years_in_business or 'N/A' }}</span>
+    </div>
+
+    {% if doc.business_description %}
+    <div class="description">
+        <strong>About</strong><br>
+        {{ doc.business_description }}
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        <strong>{{ doc.vendor_name }}</strong> — EventSphere Vendor Profile<br>
+        Printed on {{ frappe.utils.getdate(frappe.utils.nowdate()) }}
+    </div>
+</div>
