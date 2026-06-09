@@ -1,0 +1,16 @@
+<div style="max-width:600px;margin:0 auto;font-family:'Inter',sans-serif;">
+    <div style="background:linear-gradient(135deg,#8b5cf6,#7c3aed);padding:32px;text-align:center;border-radius:12px 12px 0 0;">
+        <h1 style="color:white;margin:0;font-size:24px;">Weekly Performance Report</h1>
+    </div>
+    <div style="background:#f9fafb;padding:32px;border:1px solid #e5e7eb;">
+        <p>Hi {{ vendor.vendor_name }},</p>
+        <p>Here's your performance summary for the past week:</p>
+        <table style="width:100%;border-collapse:collapse;">
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Total Bookings</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ stats.total_bookings or 0 }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Total Revenue</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(stats.total_revenue or 0) }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Confirmed</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ stats.confirmed or 0 }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Cancelled</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ stats.cancelled or 0 }}</td></tr>
+        </table>
+        <p style="margin-top:24px;">Keep up the great work!</p>
+    </div>
+</div>

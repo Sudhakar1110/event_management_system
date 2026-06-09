@@ -27,6 +27,22 @@ class VendorProfile(Document):
         pass
 
 
+# ──────────────────────────────────────────
+# Standalone hooks for hooks.py doc_events
+# These accept (doc, method) signature that Frappe passes
+# ──────────────────────────────────────────
+
+
+def after_insert(doc, method=None):
+    """Called via hooks.py doc_events: Vendor Profile -> after_insert"""
+    doc.after_insert()
+
+
+def on_update(doc, method=None):
+    """Called via hooks.py doc_events: Vendor Profile -> on_update"""
+    doc.on_update()
+
+
 @frappe.whitelist()
 def get_vendor_by_user(user=None):
     """Get vendor profile linked to the current user."""

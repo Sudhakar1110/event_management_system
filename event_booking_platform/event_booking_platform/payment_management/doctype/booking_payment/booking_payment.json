@@ -4,7 +4,7 @@
  "creation": "2024-01-01 00:00:00",
  "doctype": "DocType",
  "engine": "InnoDB",
- "field_order": ["naming_series", "booking", "customer", "vendor", "payment_date", "column_break_1", "payment_type", "payment_mode", "status", "section_amount", "amount", "transaction_id", "upi_id", "column_break_2", "payment_screenshot", "payment_receipt", "remarks", "section_erpnext", "payment_entry"],
+ "field_order": ["naming_series", "booking", "customer", "customer_email", "vendor", "payment_date", "column_break_1", "payment_type", "payment_mode", "status", "section_amount", "amount", "transaction_id", "upi_id", "column_break_2", "payment_screenshot", "payment_receipt", "remarks", "section_erpnext", "payment_entry"],
  "fields": [
   {
    "fieldname": "naming_series",
@@ -28,6 +28,14 @@
    "label": "Customer",
    "options": "Event Customer",
    "reqd": 1
+  },
+  {
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Customer Email",
+   "options": "Email",
+   "fetch_from": "customer.email",
+   "read_only": 1
   },
   {
    "fieldname": "vendor",

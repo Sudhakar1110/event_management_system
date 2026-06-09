@@ -36,3 +36,19 @@ class BookingPayment(Document):
             booking.calculate_amounts()
             booking.set_payment_status()
             booking.save(ignore_permissions=True)
+
+
+# ──────────────────────────────────────────
+# Standalone hooks for hooks.py doc_events
+# These accept (doc, method) signature that Frappe passes
+# ──────────────────────────────────────────
+
+
+def on_submit(doc, method=None):
+    """Called via hooks.py doc_events: Booking Payment -> on_submit"""
+    doc.on_submit()
+
+
+def on_cancel(doc, method=None):
+    """Called via hooks.py doc_events: Booking Payment -> on_cancel"""
+    doc.on_cancel()

@@ -120,6 +120,32 @@ class VendorBooking(Document):
             frappe.delete_doc("Vendor Availability", name, ignore_permissions=True)
 
 
+# ──────────────────────────────────────────
+# Standalone hooks for hooks.py doc_events
+# These accept (doc, method) signature that Frappe passes
+# ──────────────────────────────────────────
+
+
+def validate(doc, method=None):
+    """Called via hooks.py doc_events: Vendor Booking -> validate"""
+    doc.validate()
+
+
+def before_submit(doc, method=None):
+    """Called via hooks.py doc_events: Vendor Booking -> before_submit"""
+    doc.before_submit()
+
+
+def on_submit(doc, method=None):
+    """Called via hooks.py doc_events: Vendor Booking -> on_submit"""
+    doc.on_submit()
+
+
+def on_cancel(doc, method=None):
+    """Called via hooks.py doc_events: Vendor Booking -> on_cancel"""
+    doc.on_cancel()
+
+
 @frappe.whitelist()
 def get_vendor_packages(vendor):
     return frappe.get_all(

@@ -1,0 +1,11 @@
+<div style="max-width:600px;margin:0 auto;font-family:'Inter',sans-serif;">
+    <div style="background:linear-gradient(135deg,#10b981,#059669);padding:32px;text-align:center;border-radius:12px 12px 0 0;">
+        <h1 style="color:white;margin:0;font-size:24px;">Profile Approved!</h1>
+    </div>
+    <div style="background:#f9fafb;padding:32px;border:1px solid #e5e7eb;">
+        <p>Congratulations {{ doc.contact_person }}!</p>
+        <p>Your profile <strong>{{ doc.vendor_name }}</strong> has been approved and is now live on EventSphere.</p>
+        <p>Customers can now discover and book your services.</p>
+        <p style="margin-top:24px;"><a href="/vendor/{{ doc.name }}" style="background:#10b981;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;">View Your Profile</a></p>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div style="max-width:600px;margin:0 auto;font-family:'Inter',sans-serif;">
+    <div style="background:linear-gradient(135deg,#f59e0b,#d97706);padding:32px;text-align:center;border-radius:12px 12px 0 0;">
+        <h1 style="color:white;margin:0;font-size:24px;">New Booking Request</h1>
+    </div>
+    <div style="background:#f9fafb;padding:32px;border:1px solid #e5e7eb;">
+        <p>You have received a new booking request on EventSphere.</p>
+        <table style="width:100%;border-collapse:collapse;">
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Booking ID</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ doc.name }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Event Date</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ doc.event_date }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Event Type</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ doc.event_type }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Guests</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ doc.guest_count }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Budget</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.total_amount) }}</td></tr>
+        </table>
+        <p style="margin-top:24px;"><a href="/vendor-dashboard" style="background:#f59e0b;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;">View in Dashboard</a></p>
+    </div>
+</div>
