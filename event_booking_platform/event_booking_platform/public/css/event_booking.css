@@ -1,0 +1,233 @@
+/* Event Booking Platform — Portal Styles */
+
+/* ─── Search & Filters ─── */
+.eb-hero-search {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%);
+}
+
+.eb-search-box {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.eb-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #374151;
+    background: #f9fafb;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.eb-input:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+    background: white;
+}
+
+.eb-input-sm {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #374151;
+    background: #f9fafb;
+}
+
+.eb-btn-primary {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.eb-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+.eb-btn-primary-sm {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.eb-btn-outline {
+    padding: 10px 24px;
+    background: transparent;
+    color: #7c3aed;
+    border: 2px solid #7c3aed;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.eb-btn-outline:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+/* ─── Tags & Badges ─── */
+.eb-tag-filter {
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.eb-tag-filter:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.eb-badge-category {
+    padding: 4px 10px;
+    background: rgba(124, 58, 237, 0.9);
+    color: white;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.eb-badge-verified {
+    padding: 3px 8px;
+    background: rgba(16, 185, 129, 0.9);
+    color: white;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ─── Vendor Card ─── */
+.eb-vendor-card {
+    background: white;
+    border: 1px solid #f3f4f6;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.eb-vendor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.eb-wishlist-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+    color: #ef4444;
+}
+
+.eb-wishlist-btn:hover {
+    transform: scale(1.1);
+    background: white;
+}
+
+.eb-filter-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.eb-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.eb-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #7c3aed;
+}
+
+/* ─── Vendor Detail Page ─── */
+.eb-vendor-header {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: white;
+    padding: 40px 0;
+}
+
+.eb-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.eb-package-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s;
+}
+
+.eb-package-card:hover {
+    border-color: #7c3aed;
+}
+
+/* ─── Booking Form ─── */
+.eb-form-section {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.eb-form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+/* ─── Booking List ─── */
+.eb-status-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.eb-status-confirmed { background: #dbeafe; color: #1d4ed8; }
+.eb-status-completed { background: #d1fae5; color: #065f46; }
+.eb-status-requested { background: #fef3c7; color: #92400e; }
+.eb-status-cancelled { background: #fee2e2; color: #991b1b; }
+.eb-status-draft { background: #f3f4f6; color: #4b5563; }

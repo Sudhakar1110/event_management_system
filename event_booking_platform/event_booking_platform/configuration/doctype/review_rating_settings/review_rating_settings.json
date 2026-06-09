@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["section_review", "enable_reviews", "require_booking_for_review", "moderate_reviews", "column_break_1", "min_review_length", "max_reviews_per_booking", "auto_publish_reviews", "section_display", "show_review_in_portal", "show_rating_in_search", "column_break_2", "rating_display_style"],
+ "fields": [
+  {
+   "fieldname": "section_review",
+   "fieldtype": "Section Break",
+   "label": "Review Settings"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_reviews",
+   "fieldtype": "Check",
+   "label": "Enable Reviews"
+  },
+  {
+   "default": "1",
+   "fieldname": "require_booking_for_review",
+   "fieldtype": "Check",
+   "label": "Require Booking for Review"
+  },
+  {
+   "fieldname": "moderate_reviews",
+   "fieldtype": "Check",
+   "label": "Moderate Reviews Before Publishing"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "10",
+   "fieldname": "min_review_length",
+   "fieldtype": "Int",
+   "label": "Min Review Length (chars)"
+  },
+  {
+   "default": "1",
+   "fieldname": "max_reviews_per_booking",
+   "fieldtype": "Int",
+   "label": "Max Reviews Per Booking"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_publish_reviews",
+   "fieldtype": "Check",
+   "label": "Auto Publish Reviews"
+  },
+  {
+   "fieldname": "section_display",
+   "fieldtype": "Section Break",
+   "label": "Display Settings"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_review_in_portal",
+   "fieldtype": "Check",
+   "label": "Show Reviews in Portal"
+  },
+  {
+   "default": "1",
+   "fieldname": "show_rating_in_search",
+   "fieldtype": "Check",
+   "label": "Show Rating in Search Results"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Stars",
+   "fieldname": "rating_display_style",
+   "fieldtype": "Select",
+   "label": "Rating Display Style",
+   "options": "Stars\nNumeric\nBoth"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "Review Rating Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Event Booking Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

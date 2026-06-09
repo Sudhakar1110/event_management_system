@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "autoname": "format:{vendor_name}-{category}-{###}",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["vendor_name", "image", "caption", "category", "is_cover"],
+ "fields": [
+  {
+   "fieldname": "vendor_name",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Vendor Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "in_list_view": 1,
+   "label": "Image",
+   "reqd": 1
+  },
+  {
+   "fieldname": "caption",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Caption"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Venue\nDecoration\nFood\nPortrait\nEvent\nOther"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_cover",
+   "fieldtype": "Check",
+   "label": "Is Cover Image"
+  }
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Vendor Management",
+ "name": "Vendor Gallery",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

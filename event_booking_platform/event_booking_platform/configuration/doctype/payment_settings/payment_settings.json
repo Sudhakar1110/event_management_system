@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["section_upi", "upi_id", "upi_qr_code", "column_break_1", "payment_gateway", "api_key", "api_secret", "section_advance", "default_advance_percent", "max_advance_percent", "column_break_2", "refund_policy", "refund_days", "enable_partial_refund"],
+ "fields": [
+  {
+   "fieldname": "section_upi",
+   "fieldtype": "Section Break",
+   "label": "UPI Settings"
+  },
+  {
+   "fieldname": "upi_id",
+   "fieldtype": "Data",
+   "label": "Default UPI ID"
+  },
+  {
+   "fieldname": "upi_qr_code",
+   "fieldtype": "Attach Image",
+   "label": "UPI QR Code"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_gateway",
+   "fieldtype": "Select",
+   "label": "Payment Gateway",
+   "options": "Razorpay\nPaytm\nCashfree\nCCAvenue\nCustom"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "label": "API Key"
+  },
+  {
+   "fieldname": "api_secret",
+   "fieldtype": "Password",
+   "label": "API Secret"
+  },
+  {
+   "fieldname": "section_advance",
+   "fieldtype": "Section Break",
+   "label": "Advance & Refund"
+  },
+  {
+   "default": "30",
+   "fieldname": "default_advance_percent",
+   "fieldtype": "Percent",
+   "label": "Default Advance (%)"
+  },
+  {
+   "default": "75",
+   "fieldname": "max_advance_percent",
+   "fieldtype": "Percent",
+   "label": "Max Advance (%)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "refund_policy",
+   "fieldtype": "Text Editor",
+   "label": "Refund Policy"
+  },
+  {
+   "default": "7",
+   "fieldname": "refund_days",
+   "fieldtype": "Int",
+   "label": "Refund Processing Days"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_partial_refund",
+   "fieldtype": "Check",
+   "label": "Enable Partial Refund"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "Payment Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Event Booking Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Event Booking Accounts"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

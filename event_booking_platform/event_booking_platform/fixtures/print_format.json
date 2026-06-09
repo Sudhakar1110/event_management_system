@@ -1,0 +1,6 @@
+[
+ {"doctype": "Print Format", "name": "Booking Confirmation", "doc_type": "Vendor Booking", "format_name": "Booking Confirmation", "module": "Event Booking Platform", "print_format_type": "Jinja", "show_section_headings": 1, "standard": "Yes"},
+ {"doctype": "Print Format", "name": "Tax Invoice", "doc_type": "Vendor Booking", "format_name": "Tax Invoice", "module": "Event Booking Platform", "print_format_type": "Jinja", "show_section_headings": 1, "standard": "Yes"},
+ {"doctype": "Print Format", "name": "Payment Receipt", "doc_type": "Booking Payment", "format_name": "Payment Receipt", "module": "Event Booking Platform", "print_format_type": "Jinja", "show_section_headings": 1, "standard": "Yes"},
+ {"doctype": "Print Format", "name": "Vendor Profile Card", "doc_type": "Vendor Profile", "format_name": "Vendor Profile Card", "module": "Event Booking Platform", "print_format_type": "Jinja", "show_section_headings": 0, "standard": "Yes"}
+]

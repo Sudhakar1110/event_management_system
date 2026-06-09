@@ -1,0 +1,10 @@
+[
+ {"doctype": "Custom Field", "dt": "Supplier", "fieldname": "event_vendor", "fieldtype": "Link", "label": "Event Vendor", "options": "Vendor Profile", "insert_after": "supplier_name"},
+ {"doctype": "Custom Field", "dt": "Supplier", "fieldname": "vendor_category", "fieldtype": "Link", "label": "Vendor Category", "options": "Vendor Category", "insert_after": "event_vendor"},
+ {"doctype": "Custom Field", "dt": "Supplier", "fieldname": "is_event_vendor", "fieldtype": "Check", "label": "Is Event Vendor", "insert_after": "vendor_category"},
+ {"doctype": "Custom Field", "dt": "Customer", "fieldname": "event_customer", "fieldtype": "Link", "label": "Event Customer", "options": "Event Customer", "insert_after": "customer_name"},
+ {"doctype": "Custom Field", "dt": "Customer", "fieldname": "preferred_event_type", "fieldtype": "Link", "label": "Preferred Event Type", "options": "Event Type", "insert_after": "event_customer"},
+ {"doctype": "Custom Field", "dt": "Customer", "fieldname": "total_events", "fieldtype": "Int", "label": "Total Events", "read_only": 1, "insert_after": "preferred_event_type"},
+ {"doctype": "Custom Field", "dt": "Payment Entry", "fieldname": "booking_payment", "fieldtype": "Link", "label": "Booking Payment", "options": "Booking Payment", "insert_after": "payment_type"},
+ {"doctype": "Custom Field", "dt": "Payment Entry", "fieldname": "event_booking_ref", "fieldtype": "Link", "label": "Event Booking Ref", "options": "Vendor Booking", "insert_after": "booking_payment"}
+]

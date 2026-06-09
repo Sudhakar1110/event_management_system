@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["naming_series", "full_name", "email", "phone", "profile_image", "column_break_1", "user", "customer", "city", "state", "date_of_birth", "section_preferences", "preferred_event_types", "budget_range", "column_break_2", "total_bookings", "total_spent", "last_booking_date", "section_linked", "customer_link"],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CUST-.YYYY.-.####",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "profile_image",
+   "fieldtype": "Attach Image",
+   "label": "Profile Image"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "Portal User",
+   "options": "User"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "ERPNext Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "section_preferences",
+   "fieldtype": "Section Break",
+   "label": "Preferences"
+  },
+  {
+   "fieldname": "preferred_event_types",
+   "fieldtype": "Small Text",
+   "label": "Preferred Event Types"
+  },
+  {
+   "fieldname": "budget_range",
+   "fieldtype": "Currency",
+   "label": "Budget Range (₹)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_bookings",
+   "fieldtype": "Int",
+   "label": "Total Bookings",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_spent",
+   "fieldtype": "Currency",
+   "label": "Total Spent (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_booking_date",
+   "fieldtype": "Date",
+   "label": "Last Booking Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_linked",
+   "fieldtype": "Section Break",
+   "label": "Linked Accounts"
+  },
+  {
+   "fieldname": "customer_link",
+   "fieldtype": "Link",
+   "label": "Customer Link",
+   "options": "Customer"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Customer Management",
+ "name": "Event Customer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Booking Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Event Customer",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "full_name",
+ "track_changes": 1
+}

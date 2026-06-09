@@ -1,0 +1,8 @@
+[
+ {"doctype": "Number Card", "name": "Total Bookings", "label": "Total Bookings", "document_type": "Vendor Booking", "function": "Count", "module": "Booking Management", "is_standard": "Yes"},
+ {"doctype": "Number Card", "name": "Active Vendors", "label": "Active Vendors", "document_type": "Vendor Profile", "function": "Count", "module": "Vendor Management", "is_standard": "Yes"},
+ {"doctype": "Number Card", "name": "Monthly Revenue", "label": "Monthly Revenue", "document_type": "Booking Payment", "function": "Sum", "aggregate_function_based_on": "amount", "module": "Payment Management", "is_standard": "Yes"},
+ {"doctype": "Number Card", "name": "Pending Bookings", "label": "Pending Bookings", "document_type": "Vendor Booking", "function": "Count", "module": "Booking Management", "is_standard": "Yes"},
+ {"doctype": "Number Card", "name": "Total Customers", "label": "Total Customers", "document_type": "Event Customer", "function": "Count", "module": "Customer Management", "is_standard": "Yes"},
+ {"doctype": "Number Card", "name": "Completed Events", "label": "Completed Events", "document_type": "Event Request", "function": "Count", "module": "Event Management", "is_standard": "Yes"}
+]

@@ -1,0 +1,4 @@
+recursive-include event_booking_platform *.py *.js *.css *.html *.json *.md *.txt *.png *.svg *.ico
+recursive-exclude event_booking_platform/node_modules *
+recursive-exclude event_booking_platform/__pycache__ *
+recursive-exclude event_booking_platform/*.pyc

@@ -1,0 +1,11 @@
+[
+ {"doctype": "Workflow Action Master", "name": "Submit Request"},
+ {"doctype": "Workflow Action Master", "name": "Confirm Booking"},
+ {"doctype": "Workflow Action Master", "name": "Reject"},
+ {"doctype": "Workflow Action Master", "name": "Start Event"},
+ {"doctype": "Workflow Action Master", "name": "Complete Event"},
+ {"doctype": "Workflow Action Master", "name": "Cancel Booking"},
+ {"doctype": "Workflow Action Master", "name": "Approve Vendor"},
+ {"doctype": "Workflow Action Master", "name": "Suspend"},
+ {"doctype": "Workflow Action Master", "name": "Reactivate"}
+]

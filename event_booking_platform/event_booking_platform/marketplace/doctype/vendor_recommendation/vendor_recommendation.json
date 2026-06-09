@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "autoname": "format:{customer}-{vendor}",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["customer", "vendor", "column_break_1", "recommendation_reason", "score"],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Event Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vendor",
+   "options": "Vendor Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recommendation_reason",
+   "fieldtype": "Small Text",
+   "label": "Recommendation Reason"
+  },
+  {
+   "fieldname": "score",
+   "fieldtype": "Float",
+   "label": "Recommendation Score",
+   "precision": "2"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Marketplace",
+ "name": "Vendor Recommendation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Event Booking Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

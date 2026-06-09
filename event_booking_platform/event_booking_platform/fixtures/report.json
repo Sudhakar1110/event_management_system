@@ -1,0 +1,9 @@
+[
+ {"doctype": "Report", "name": "Booking Report", "ref_doctype": "Vendor Booking", "report_type": "Script Report", "module": "Booking Management", "is_standard": "Yes"},
+ {"doctype": "Report", "name": "Vendor Performance Report", "ref_doctype": "Vendor Profile", "report_type": "Script Report", "module": "Vendor Management", "is_standard": "Yes"},
+ {"doctype": "Report", "name": "Revenue Analysis Report", "ref_doctype": "Booking Payment", "report_type": "Script Report", "module": "Payment Management", "is_standard": "Yes"},
+ {"doctype": "Report", "name": "Customer Activity Report", "ref_doctype": "Event Customer", "report_type": "Script Report", "module": "Customer Management", "is_standard": "Yes"},
+ {"doctype": "Report", "name": "Payment Collection Report", "ref_doctype": "Booking Payment", "report_type": "Script Report", "module": "Payment Management", "is_standard": "Yes"},
+ {"doctype": "Report", "name": "Cancellation Report", "ref_doctype": "Booking Cancellation", "report_type": "Script Report", "module": "Booking Management", "is_standard": "Yes"},
+ {"doctype": "Report", "name": "Event Analytics Report", "ref_doctype": "Event Request", "report_type": "Script Report", "module": "Event Management", "is_standard": "Yes"}
+]

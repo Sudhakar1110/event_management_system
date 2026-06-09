@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "autoname": "format:{parent}-{service_category}",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["service_category", "vendor_category", "column_break_1", "budget", "is_required", "notes"],
+ "fields": [
+  {
+   "fieldname": "service_category",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vendor_category",
+   "fieldtype": "Link",
+   "label": "Vendor Category",
+   "options": "Vendor Category"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "budget",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Budget (₹)"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_required",
+   "fieldtype": "Check",
+   "label": "Is Required"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Event Management",
+ "name": "Event Service Requirement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,90 @@
+[
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Wedding Hall",
+  "icon": "fa fa-building",
+  "description": "Wedding venues, banquet halls, and marriage gardens",
+  "is_active": 1,
+  "sort_order": 1
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Banquet Hall",
+  "icon": "fa fa-building-o",
+  "description": "Banquet halls for receptions and corporate events",
+  "is_active": 1,
+  "sort_order": 2
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Photographer",
+  "icon": "fa fa-camera",
+  "description": "Wedding and event photographers",
+  "is_active": 1,
+  "sort_order": 3
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Videographer",
+  "icon": "fa fa-video-camera",
+  "description": "Event videography and cinematography",
+  "is_active": 1,
+  "sort_order": 4
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Caterer",
+  "icon": "fa fa-cutlery",
+  "description": "Food catering services for events",
+  "is_active": 1,
+  "sort_order": 5
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Decorator",
+  "icon": "fa fa-paint-brush",
+  "description": "Event decoration and design services",
+  "is_active": 1,
+  "sort_order": 6
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Makeup Artist",
+  "icon": "fa fa-magic",
+  "description": "Bridal and event makeup services",
+  "is_active": 1,
+  "sort_order": 7
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Event Planner",
+  "icon": "fa fa-calendar-check-o",
+  "description": "Full event planning and coordination",
+  "is_active": 1,
+  "sort_order": 8
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "DJ Provider",
+  "icon": "fa fa-music",
+  "description": "DJ and entertainment services",
+  "is_active": 1,
+  "sort_order": 9
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Transportation Provider",
+  "icon": "fa fa-car",
+  "description": "Wedding car rentals and event transportation",
+  "is_active": 1,
+  "sort_order": 10
+ },
+ {
+  "doctype": "Vendor Category",
+  "category_name": "Flower Decorator",
+  "icon": "fa fa-leaf",
+  "description": "Floral arrangements and flower decoration",
+  "is_active": 1,
+  "sort_order": 11
+ }
+]

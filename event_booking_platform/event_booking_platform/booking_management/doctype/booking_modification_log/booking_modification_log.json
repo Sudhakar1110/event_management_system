@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "autoname": "format:{booking}-{modified_on}-{###}",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["booking", "modified_on", "modified_by", "column_break_1", "field_changed", "old_value", "new_value", "reason"],
+ "fields": [
+  {
+   "fieldname": "booking",
+   "fieldtype": "Link",
+   "label": "Booking",
+   "options": "Vendor Booking",
+   "reqd": 1
+  },
+  {
+   "fieldname": "modified_on",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Modified On",
+   "reqd": 1
+  },
+  {
+   "fieldname": "modified_by",
+   "fieldtype": "Data",
+   "label": "Modified By"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "field_changed",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Field Changed"
+  },
+  {
+   "fieldname": "old_value",
+   "fieldtype": "Small Text",
+   "label": "Old Value"
+  },
+  {
+   "fieldname": "new_value",
+   "fieldtype": "Small Text",
+   "label": "New Value"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  }
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Booking Management",
+ "name": "Booking Modification Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,68 @@
+[
+ {
+  "charts": [
+   {"chart_name": "Monthly Bookings", "label": "Monthly Bookings"},
+   {"chart_name": "Revenue by Category", "label": "Revenue by Category"}
+  ],
+  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>EventSphere Dashboard</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Vendor Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Booking Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Event Management\",\"col\":4}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Monthly Bookings\",\"col\":6}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Revenue by Category\",\"col\":6}}]",
+  "creation": "2024-01-01 00:00:00",
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "calendar",
+  "idx": 0,
+  "is_default": 1,
+  "is_hidden": 0,
+  "label": "Event Booking Platform",
+  "links": [
+   {"hidden": 0, "is_query_report": 0, "label": "Vendor Management", "link_count": 0, "onboard": 1, "type": "Card Break"},
+   {"hidden": 0, "is_query_report": 0, "label": "Vendor Profile", "link_count": 0, "link_to": "Vendor Profile", "link_type": "DocType", "onboard": 1, "type": "Link"},
+   {"label": "Vendor Category", "link_to": "Vendor Category", "link_type": "DocType", "type": "Link"},
+   {"label": "Vendor Package", "link_to": "Vendor Package", "link_type": "DocType", "type": "Link"},
+   {"label": "Vendor Review", "link_to": "Vendor Review", "link_type": "DocType", "type": "Link"},
+   {"label": "Vendor Availability", "link_to": "Vendor Availability", "link_type": "DocType", "type": "Link"},
+   {"label": "Booking Management", "type": "Card Break"},
+   {"label": "Vendor Booking", "link_to": "Vendor Booking", "link_type": "DocType", "onboard": 1, "type": "Link"},
+   {"label": "Hall Booking", "link_to": "Hall Booking", "link_type": "DocType", "type": "Link"},
+   {"label": "Booking Payment", "link_to": "Booking Payment", "link_type": "DocType", "type": "Link"},
+   {"label": "Refund Request", "link_to": "Refund Request", "link_type": "DocType", "type": "Link"},
+   {"label": "Event Management", "type": "Card Break"},
+   {"label": "Event Request", "link_to": "Event Request", "link_type": "DocType", "onboard": 1, "type": "Link"},
+   {"label": "Event Plan", "link_to": "Event Plan", "link_type": "DocType", "type": "Link"},
+   {"label": "Event Type", "link_to": "Event Type", "link_type": "DocType", "type": "Link"},
+   {"label": "Reports", "type": "Card Break"},
+   {"is_query_report": 1, "label": "Booking Report", "link_to": "Booking Report", "link_type": "Report", "type": "Link"},
+   {"is_query_report": 1, "label": "Vendor Performance Report", "link_to": "Vendor Performance Report", "link_type": "Report", "type": "Link"},
+   {"is_query_report": 1, "label": "Revenue Analysis Report", "link_to": "Revenue Analysis Report", "link_type": "Report", "type": "Link"},
+   {"is_query_report": 1, "label": "Payment Collection Report", "link_to": "Payment Collection Report", "link_type": "Report", "type": "Link"},
+   {"label": "Configuration", "type": "Card Break"},
+   {"label": "Event Booking Settings", "link_to": "Event Booking Settings", "link_type": "DocType", "type": "Link"},
+   {"label": "Payment Settings", "link_to": "Payment Settings", "link_type": "DocType", "type": "Link"},
+   {"label": "Notification Settings", "link_to": "Notification Settings", "link_type": "DocType", "type": "Link"}
+  ],
+  "modified": "2024-01-01 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Event Booking Platform",
+  "name": "Event Booking Platform",
+  "number_cards": [
+   {"label": "Total Bookings", "card_name": "Total Bookings"},
+   {"label": "Active Vendors", "card_name": "Active Vendors"},
+   {"label": "Monthly Revenue", "card_name": "Monthly Revenue"},
+   {"label": "Pending Bookings", "card_name": "Pending Bookings"}
+  ],
+  "owner": "Administrator",
+  "parent_page": "",
+  "public": 1,
+  "restrict_to_domain": "",
+  "roles": [],
+  "sequence_id": 1.0,
+  "shortcuts": [
+   {"color": "Purple", "format": "{} Bookings", "label": "Vendor Booking", "link_to": "Vendor Booking", "stats_filter": "{\"booking_status\": \"Requested\"}", "type": "DocType"},
+   {"color": "Green", "label": "New Vendor", "link_to": "Vendor Profile", "type": "DocType"},
+   {"color": "Orange", "label": "New Event Request", "link_to": "Event Request", "type": "DocType"},
+   {"color": "Blue", "label": "Revenue Analysis", "link_to": "Revenue Analysis Report", "type": "Report"}
+  ],
+  "title": "Event Booking Platform"
+ }
+]

@@ -1,0 +1,276 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["naming_series", "booking_title", "customer", "vendor", "column_break_1", "booking_status", "event_request", "booking_date", "section_event", "event_type", "event_date", "event_end_date", "event_time", "column_break_2", "venue", "guest_count", "special_requirements", "section_package", "package", "custom_requirements", "column_break_3", "base_amount", "discount_percent", "discount_amount", "taxable_amount", "gst_percent", "gst_amount", "total_amount", "section_payment", "advance_percent", "advance_amount", "paid_amount", "balance_amount", "payment_status", "section_notes", "vendor_notes", "terms_conditions", "cancellation_policy"],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "BKG-.YYYY.MM.-.####",
+   "set_only_once": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "booking_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Booking Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Event Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Vendor",
+   "options": "Vendor Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "booking_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Booking Status",
+   "options": "Draft\nRequested\nConfirmed\nIn Progress\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "event_request",
+   "fieldtype": "Link",
+   "label": "Event Request",
+   "options": "Event Request"
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_event",
+   "fieldtype": "Section Break",
+   "label": "Event Details"
+  },
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Link",
+   "label": "Event Type",
+   "options": "Event Type"
+  },
+  {
+   "fieldname": "event_date",
+   "fieldtype": "Date",
+   "label": "Event Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event_end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "event_time",
+   "fieldtype": "Time",
+   "label": "Event Time"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "venue",
+   "fieldtype": "Data",
+   "label": "Venue / City"
+  },
+  {
+   "fieldname": "guest_count",
+   "fieldtype": "Int",
+   "label": "Expected Guests"
+  },
+  {
+   "fieldname": "special_requirements",
+   "fieldtype": "Text Editor",
+   "label": "Special Requirements"
+  },
+  {
+   "fieldname": "section_package",
+   "fieldtype": "Section Break",
+   "label": "Package & Pricing"
+  },
+  {
+   "fieldname": "package",
+   "fieldtype": "Link",
+   "label": "Selected Package",
+   "options": "Vendor Package"
+  },
+  {
+   "fieldname": "custom_requirements",
+   "fieldtype": "Table",
+   "label": "Custom Requirements",
+   "options": "Booking Custom Item"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Base Amount (₹)"
+  },
+  {
+   "fieldname": "discount_percent",
+   "fieldtype": "Percent",
+   "label": "Discount (%)"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "taxable_amount",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "18",
+   "fieldname": "gst_percent",
+   "fieldtype": "Percent",
+   "label": "GST (%)"
+  },
+  {
+   "fieldname": "gst_amount",
+   "fieldtype": "Currency",
+   "label": "GST Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_payment",
+   "fieldtype": "Section Break",
+   "label": "Payment Summary"
+  },
+  {
+   "fieldname": "advance_percent",
+   "fieldtype": "Percent",
+   "label": "Advance Required (%)"
+  },
+  {
+   "fieldname": "advance_amount",
+   "fieldtype": "Currency",
+   "label": "Advance Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "balance_amount",
+   "fieldtype": "Currency",
+   "label": "Balance Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Unpaid\nPartially Paid\nFully Paid\nRefunded",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes & Terms"
+  },
+  {
+   "fieldname": "vendor_notes",
+   "fieldtype": "Text Editor",
+   "label": "Vendor Notes"
+  },
+  {
+   "fieldname": "terms_conditions",
+   "fieldtype": "Text Editor",
+   "label": "Terms & Conditions"
+  },
+  {
+   "fieldname": "cancellation_policy",
+   "fieldtype": "Text Editor",
+   "label": "Cancellation Policy"
+  }
+ ],
+ "icon": "fa fa-calendar",
+ "is_submittable": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Booking Management",
+ "name": "Vendor Booking",
+ "naming_rule": "By Naming Series",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Booking Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Event Booking User",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Vendor",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Event Customer"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "booking_title",
+ "track_changes": 1
+}

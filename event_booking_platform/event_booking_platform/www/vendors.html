@@ -1,0 +1,70 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Find Wedding & Event Vendors — EventSphere{% endblock %}
+
+{% block head_include %}
+<link rel="stylesheet" href="/assets/event_booking_platform/css/event_booking.css">
+{% endblock %}
+
+{% block page_content %}
+<div class="eb-vendors-page">
+    <section class="eb-hero-search text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Find the Perfect Vendors for Your Event</h1>
+            <p class="text-xl mb-8">Verified vendors across India — Weddings, Receptions, Corporate Events & more</p>
+            <div class="eb-search-box max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                    <input type="text" id="search-text" placeholder="Search vendors..." class="eb-input" />
+                    <select id="category-filter" class="eb-input">
+                        <option value="">All Categories</option>
+                        {% for cat in categories %}
+                        <option value="{{ cat.name }}">{{ cat.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="text" id="city-filter" placeholder="City / Location" class="eb-input" />
+                    <button onclick="searchVendors()" class="eb-btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <div id="vendors-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+async function searchVendors() {
+    const params = {
+        category: document.getElementById('category-filter').value,
+        city: document.getElementById('city-filter').value,
+        search_text: document.getElementById('search-text').value
+    };
+    try {
+        const response = await frappe.call({
+            method: 'event_booking_platform.utils.api.search_vendors',
+            args: params
+        });
+        const result = response.message;
+        const grid = document.getElementById('vendors-grid');
+        grid.innerHTML = '';
+        if (result.vendors.length === 0) {
+            grid.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-8">No vendors found. Try adjusting your filters.</p>';
+            return;
+        }
+        result.vendors.forEach(function(vendor) {
+            const card = document.createElement('div');
+            card.className = 'eb-vendor-card rounded-2xl overflow-hidden';
+            card.innerHTML = '<div class="p-4"><h3 class="font-semibold text-lg">' + vendor.vendor_name + '</h3><p class="text-gray-500">' + vendor.city + '</p><p class="text-purple-700 font-bold">₹' + (vendor.min_price || 0).toLocaleString('en-IN') + '</p></div>';
+            grid.appendChild(card);
+        });
+    } catch(err) {
+        console.error('Search error:', err);
+    }
+}
+document.addEventListener('DOMContentLoaded', searchVendors);
+</script>
+{% endblock %}

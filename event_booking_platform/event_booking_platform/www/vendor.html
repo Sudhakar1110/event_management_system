@@ -1,0 +1,20 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ vendor.vendor_name }} — EventSphere{% endblock %}
+
+{% block page_content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">{{ vendor.vendor_name }}</h1>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+            <div class="eb-form-section">
+                <p class="text-gray-600">{{ vendor.business_description }}</p>
+            </div>
+        </div>
+        <div class="eb-form-section">
+            <p class="text-lg font-bold">Starting from ₹{{ "%.0f"|format(vendor.min_price) }}</p>
+            <a href="/book/{{ vendor.name }}" class="eb-btn-primary w-full text-center mt-4">Book Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

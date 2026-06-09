@@ -1,0 +1,14 @@
+<div style="max-width:800px;margin:0 auto;padding:40px;">
+    <h1 style="text-align:center;color:#7c3aed;">Booking Confirmation</h1>
+    <table style="width:100%;border-collapse:collapse;margin-top:24px;">
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Booking ID</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.name }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Title</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.booking_title }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Customer</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.customer }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Vendor</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.vendor }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Event Date</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.event_date }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Total Amount</td><td style="padding:8px;border:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.total_amount) }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Paid Amount</td><td style="padding:8px;border:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.paid_amount) }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Balance</td><td style="padding:8px;border:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.balance_amount) }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Status</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.booking_status }}</td></tr>
+    </table>
+</div>

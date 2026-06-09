@@ -1,0 +1,12 @@
+<div style="max-width:800px;margin:0 auto;padding:40px;">
+    <h1 style="text-align:center;color:#374151;">Tax Invoice</h1>
+    <table style="width:100%;border-collapse:collapse;margin-top:24px;">
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Invoice No.</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.name }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Customer</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.customer }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Vendor</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.vendor }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Base Amount</td><td style="padding:8px;border:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.base_amount) }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Discount</td><td style="padding:8px;border:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.discount_amount) }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">GST @{{ doc.gst_percent }}%</td><td style="padding:8px;border:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.gst_amount) }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;font-weight:bold;">Total Amount</td><td style="padding:8px;border:1px solid #e5e7eb;font-weight:bold;">₹{{ '{:,.2f}'.format(doc.total_amount) }}</td></tr>
+    </table>
+</div>

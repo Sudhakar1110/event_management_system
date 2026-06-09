@@ -1,0 +1,12 @@
+<div style="max-width:800px;margin:0 auto;padding:40px;">
+    <h1 style="text-align:center;color:#059669;">Payment Receipt</h1>
+    <table style="width:100%;border-collapse:collapse;margin-top:24px;">
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Receipt No.</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.name }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Booking</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.booking }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Customer</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.customer }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Amount</td><td style="padding:8px;border:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.amount) }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Payment Mode</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.payment_mode }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Transaction ID</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.transaction_id or 'N/A' }}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #e5e7eb;">Status</td><td style="padding:8px;border:1px solid #e5e7eb;">{{ doc.status }}</td></tr>
+    </table>
+</div>

@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["section_email", "enable_email_notifications", "email_template_style", "column_break_1", "sender_name", "sender_email", "section_notifications", "booking_confirmation", "booking_request", "payment_receipt_notification", "column_break_2", "event_reminder", "cancellation_alert", "vendor_approved_notification", "section_reminders", "reminder_days_before", "reminder_frequency"],
+ "fields": [
+  {
+   "fieldname": "section_email",
+   "fieldtype": "Section Break",
+   "label": "Email Settings"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_email_notifications",
+   "fieldtype": "Check",
+   "label": "Enable Email Notifications"
+  },
+  {
+   "fieldname": "email_template_style",
+   "fieldtype": "Select",
+   "label": "Email Template Style",
+   "options": "Modern\nClassic\nMinimal"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sender_name",
+   "fieldtype": "Data",
+   "label": "Sender Name"
+  },
+  {
+   "fieldname": "sender_email",
+   "fieldtype": "Data",
+   "label": "Sender Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_notifications",
+   "fieldtype": "Section Break",
+   "label": "Notification Toggles"
+  },
+  {
+   "default": "1",
+   "fieldname": "booking_confirmation",
+   "fieldtype": "Check",
+   "label": "Booking Confirmation"
+  },
+  {
+   "default": "1",
+   "fieldname": "booking_request",
+   "fieldtype": "Check",
+   "label": "New Booking Request"
+  },
+  {
+   "default": "1",
+   "fieldname": "payment_receipt_notification",
+   "fieldtype": "Check",
+   "label": "Payment Receipt"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "event_reminder",
+   "fieldtype": "Check",
+   "label": "Event Reminder"
+  },
+  {
+   "default": "1",
+   "fieldname": "cancellation_alert",
+   "fieldtype": "Check",
+   "label": "Cancellation Alert"
+  },
+  {
+   "default": "1",
+   "fieldname": "vendor_approved_notification",
+   "fieldtype": "Check",
+   "label": "Vendor Approved"
+  },
+  {
+   "fieldname": "section_reminders",
+   "fieldtype": "Section Break",
+   "label": "Reminder Settings"
+  },
+  {
+   "default": "3",
+   "fieldname": "reminder_days_before",
+   "fieldtype": "Int",
+   "label": "Reminder Days Before Event"
+  },
+  {
+   "default": "Daily",
+   "fieldname": "reminder_frequency",
+   "fieldtype": "Select",
+   "label": "Reminder Frequency",
+   "options": "Daily\nEvery 2 Days\nWeekly"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "Notification Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Event Booking Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

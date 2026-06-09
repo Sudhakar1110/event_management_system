@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["section_approval", "require_approval", "auto_approve_with_documents", "max_pending_days", "column_break_1", "min_rating_for_featured", "featured_vendor_count", "section_commission", "commission_type", "commission_percent", "column_break_2", "min_payout_amount", "payout_cycle"],
+ "fields": [
+  {
+   "fieldname": "section_approval",
+   "fieldtype": "Section Break",
+   "label": "Vendor Approval"
+  },
+  {
+   "default": "1",
+   "fieldname": "require_approval",
+   "fieldtype": "Check",
+   "label": "Require Manager Approval"
+  },
+  {
+   "fieldname": "auto_approve_with_documents",
+   "fieldtype": "Check",
+   "label": "Auto Approve if Documents Verified"
+  },
+  {
+   "default": "30",
+   "fieldname": "max_pending_days",
+   "fieldtype": "Int",
+   "label": "Max Pending Days"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "4",
+   "fieldname": "min_rating_for_featured",
+   "fieldtype": "Float",
+   "label": "Min Rating for Featured",
+   "precision": "1"
+  },
+  {
+   "default": "10",
+   "fieldname": "featured_vendor_count",
+   "fieldtype": "Int",
+   "label": "Featured Vendor Count"
+  },
+  {
+   "fieldname": "section_commission",
+   "fieldtype": "Section Break",
+   "label": "Commission Settings"
+  },
+  {
+   "default": "Percentage",
+   "fieldname": "commission_type",
+   "fieldtype": "Select",
+   "label": "Commission Type",
+   "options": "Percentage\nFixed"
+  },
+  {
+   "default": "10",
+   "fieldname": "commission_percent",
+   "fieldtype": "Percent",
+   "label": "Commission (%)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1000",
+   "fieldname": "min_payout_amount",
+   "fieldtype": "Currency",
+   "label": "Min Payout Amount (₹)"
+  },
+  {
+   "default": "Monthly",
+   "fieldname": "payout_cycle",
+   "fieldtype": "Select",
+   "label": "Payout Cycle",
+   "options": "Weekly\nBiweekly\nMonthly"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Configuration",
+ "name": "Vendor Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Event Booking Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

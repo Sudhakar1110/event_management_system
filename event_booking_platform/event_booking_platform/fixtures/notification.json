@@ -1,0 +1,63 @@
+[
+ {
+  "name": "Booking Confirmation — Customer",
+  "subject": "Your Booking is Confirmed! 🎉 — {{ doc.booking_title }}",
+  "document_type": "Vendor Booking",
+  "event": "Value Change",
+  "value_changed": "booking_status",
+  "condition": "doc.booking_status == 'Confirmed'",
+  "send_to_all_assignees": 0,
+  "recipients": [{"receiver_by_document_field": "customer_email", "cc": ""}],
+  "message": "<p>Dear {{ frappe.db.get_value('Event Customer', doc.customer, 'full_name') }},</p><p>Great news! Your booking <strong>{{ doc.name }}</strong> has been confirmed.</p><table><tr><td>Event:</td><td>{{ doc.booking_title }}</td></tr><tr><td>Vendor:</td><td>{{ doc.vendor }}</td></tr><tr><td>Event Date:</td><td>{{ doc.event_date }}</td></tr><tr><td>Total Amount:</td><td>₹{{ '{:,.2f}'.format(doc.total_amount) }}</td></tr><tr><td>Advance Due:</td><td>₹{{ '{:,.2f}'.format(doc.advance_amount) }}</td></tr></table><p><a href='/my-bookings/{{ doc.name }}'>View Booking Details</a></p>",
+  "module": "Event Booking Platform",
+  "enabled": 1,
+  "channel": "Email"
+ },
+ {
+  "name": "New Booking Request — Vendor",
+  "subject": "New Booking Request for {{ doc.event_date }} — EventSphere",
+  "document_type": "Vendor Booking",
+  "event": "Value Change",
+  "value_changed": "booking_status",
+  "condition": "doc.booking_status == 'Requested'",
+  "recipients": [{"receiver_by_document_field": "vendor_email", "cc": ""}],
+  "message": "<p>You have received a new booking request on EventSphere.</p><table><tr><td>Booking ID:</td><td>{{ doc.name }}</td></tr><tr><td>Event Date:</td><td>{{ doc.event_date }}</td></tr><tr><td>Event Type:</td><td>{{ doc.event_type }}</td></tr><tr><td>Guests:</td><td>{{ doc.guest_count }}</td></tr><tr><td>Budget:</td><td>₹{{ '{:,.2f}'.format(doc.total_amount) }}</td></tr></table><p>Please login to your vendor dashboard to confirm or decline this request within 24 hours.</p>",
+  "module": "Event Booking Platform",
+  "enabled": 1,
+  "channel": "Email"
+ },
+ {
+  "name": "Payment Received Confirmation",
+  "subject": "Payment of ₹{{ '{:,.2f}'.format(doc.amount) }} Received — {{ doc.booking }}",
+  "document_type": "Booking Payment",
+  "event": "on_submit",
+  "recipients": [{"receiver_by_document_field": "customer_email"}],
+  "message": "<p>We have received your payment.</p><table><tr><td>Payment ID:</td><td>{{ doc.name }}</td></tr><tr><td>Booking:</td><td>{{ doc.booking }}</td></tr><tr><td>Amount:</td><td>₹{{ '{:,.2f}'.format(doc.amount) }}</td></tr><tr><td>Mode:</td><td>{{ doc.payment_mode }}</td></tr><tr><td>Transaction ID:</td><td>{{ doc.transaction_id or 'N/A' }}</td></tr></table>",
+  "module": "Event Booking Platform",
+  "enabled": 1
+ },
+ {
+  "name": "Booking Cancellation Alert",
+  "subject": "Booking Cancelled — {{ doc.booking_title }}",
+  "document_type": "Vendor Booking",
+  "event": "Value Change",
+  "value_changed": "booking_status",
+  "condition": "doc.booking_status == 'Cancelled'",
+  "recipients": [{"receiver_by_document_field": "customer_email"}, {"receiver_by_document_field": "vendor_email"}],
+  "message": "<p>Booking <strong>{{ doc.name }}</strong> — {{ doc.booking_title }} has been cancelled.</p><p>If you believe this is an error, please contact support immediately.</p>",
+  "module": "Event Booking Platform",
+  "enabled": 1
+ },
+ {
+  "name": "Vendor Profile Approved",
+  "subject": "Your Vendor Profile is Now Active on EventSphere! 🎊",
+  "document_type": "Vendor Profile",
+  "event": "Value Change",
+  "value_changed": "status",
+  "condition": "doc.status == 'Active'",
+  "recipients": [{"receiver_by_document_field": "email"}],
+  "message": "<p>Congratulations {{ doc.contact_person }}!</p><p>Your vendor profile <strong>{{ doc.vendor_name }}</strong> has been approved and is now live on EventSphere.</p><p>Customers can now discover and book your services. <a href='/vendor/{{ doc.name }}'>View your profile</a>.</p>",
+  "module": "Event Booking Platform",
+  "enabled": 1
+ }
+]

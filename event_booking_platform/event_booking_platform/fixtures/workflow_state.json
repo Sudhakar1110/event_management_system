@@ -1,0 +1,11 @@
+[
+ {"doctype": "Workflow State", "workflow_state_name": "Draft"},
+ {"doctype": "Workflow State", "workflow_state_name": "Requested"},
+ {"doctype": "Workflow State", "workflow_state_name": "Confirmed"},
+ {"doctype": "Workflow State", "workflow_state_name": "In Progress"},
+ {"doctype": "Workflow State", "workflow_state_name": "Completed"},
+ {"doctype": "Workflow State", "workflow_state_name": "Cancelled"},
+ {"doctype": "Workflow State", "workflow_state_name": "Pending Approval"},
+ {"doctype": "Workflow State", "workflow_state_name": "Active"},
+ {"doctype": "Workflow State", "workflow_state_name": "Suspended"}
+]

@@ -1,0 +1,45 @@
+[
+ {
+  "doctype": "Workflow",
+  "workflow_name": "Vendor Booking Workflow",
+  "document_type": "Vendor Booking",
+  "workflow_state_field": "booking_status",
+  "is_active": 1,
+  "send_email_alert": 0,
+  "states": [
+   {"state": "Draft", "doc_status": 0},
+   {"state": "Requested", "doc_status": 0},
+   {"state": "Confirmed", "doc_status": 0},
+   {"state": "In Progress", "doc_status": 0},
+   {"state": "Completed", "doc_status": 1},
+   {"state": "Cancelled", "doc_status": 2}
+  ],
+  "transitions": [
+   {"state": "Draft", "action": "Submit Request", "next_state": "Requested", "allowed": "Event Booking User", "allow_self_approval": 1},
+   {"state": "Requested", "action": "Confirm Booking", "next_state": "Confirmed", "allowed": "Vendor", "allow_self_approval": 1},
+   {"state": "Requested", "action": "Reject", "next_state": "Cancelled", "allowed": "Vendor", "allow_self_approval": 1},
+   {"state": "Confirmed", "action": "Start Event", "next_state": "In Progress", "allowed": "Event Booking Manager", "allow_self_approval": 1},
+   {"state": "In Progress", "action": "Complete Event", "next_state": "Completed", "allowed": "Event Booking Manager", "allow_self_approval": 1},
+   {"state": "Confirmed", "action": "Cancel Booking", "next_state": "Cancelled", "allowed": "Event Booking Manager", "allow_self_approval": 1}
+  ]
+ },
+ {
+  "doctype": "Workflow",
+  "workflow_name": "Vendor Profile Approval",
+  "document_type": "Vendor Profile",
+  "workflow_state_field": "status",
+  "is_active": 1,
+  "send_email_alert": 0,
+  "states": [
+   {"state": "Pending Approval", "doc_status": 0},
+   {"state": "Active", "doc_status": 0},
+   {"state": "Suspended", "doc_status": 0}
+  ],
+  "transitions": [
+   {"state": "Pending Approval", "action": "Approve Vendor", "next_state": "Active", "allowed": "Event Booking Manager", "allow_self_approval": 1},
+   {"state": "Pending Approval", "action": "Reject", "next_state": "Suspended", "allowed": "Event Booking Manager", "allow_self_approval": 1},
+   {"state": "Active", "action": "Suspend", "next_state": "Suspended", "allowed": "Event Booking Manager", "allow_self_approval": 1},
+   {"state": "Suspended", "action": "Reactivate", "next_state": "Active", "allowed": "Event Booking Manager", "allow_self_approval": 1}
+  ]
+ }
+]

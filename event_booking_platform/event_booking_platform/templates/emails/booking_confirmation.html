@@ -1,0 +1,17 @@
+<div style="max-width:600px;margin:0 auto;font-family:'Inter',sans-serif;">
+    <div style="background:linear-gradient(135deg,#7c3aed,#6d28d9);padding:32px;text-align:center;border-radius:12px 12px 0 0;">
+        <h1 style="color:white;margin:0;font-size:24px;">Booking Confirmed!</h1>
+    </div>
+    <div style="background:#f9fafb;padding:32px;border:1px solid #e5e7eb;">
+        <p>Dear {{ frappe.db.get_value('Event Customer', doc.customer, 'full_name') }},</p>
+        <p>Your booking has been confirmed!</p>
+        <table style="width:100%;border-collapse:collapse;">
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Booking ID</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ doc.name }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Event</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ doc.booking_title }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Vendor</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ doc.vendor }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Event Date</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">{{ doc.event_date }}</td></tr>
+            <tr><td style="padding:8px;border-bottom:1px solid #e5e7eb;"><strong>Total Amount</strong></td><td style="padding:8px;border-bottom:1px solid #e5e7eb;">₹{{ '{:,.2f}'.format(doc.total_amount) }}</td></tr>
+        </table>
+        <p style="margin-top:24px;"><a href="/my-bookings/{{ doc.name }}" style="background:#7c3aed;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;">View Booking</a></p>
+    </div>
+</div>
