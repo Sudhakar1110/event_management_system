@@ -28,7 +28,8 @@ fixtures = [
     {"dt": "Role", "filters": [["role_name", "like", "Event Booking%"]]},
     {"dt": "Role", "filters": [["role_name", "=", "Vendor"]]},
     {"dt": "Role", "filters": [["role_name", "=", "Event Customer"]]},
-    {"dt": "Workflow", "filters": [["module", "=", "Event Booking Platform"]]},
+    # IMPORTANT: Workflow State and Action Master MUST come before Workflow
+    # because Workflow has Link fields to these doctypes in child tables
     {"dt": "Workflow State", "filters": [
         ["workflow_state_name", "in", [
             "Draft","Requested","Confirmed","In Progress",
@@ -41,6 +42,7 @@ fixtures = [
             "Complete","Cancel","Approve Vendor","Suspend","Reactivate"
         ]]
     ]},
+    {"dt": "Workflow", "filters": [["module", "=", "Event Booking Platform"]]},
     {"dt": "Notification", "filters": [["module", "=", "Event Booking Platform"]]},
     {"dt": "Email Template", "filters": [["module", "=", "Event Booking Platform"]]},
     {"dt": "Print Format", "filters": [["module", "=", "Event Booking Platform"]]},
