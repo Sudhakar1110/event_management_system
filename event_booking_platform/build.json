@@ -1,0 +1,10 @@
+{
+	"event_booking_platform": {
+		"js": {
+			"event_booking_platform": "public/js/event_booking_platform.js"
+		},
+		"css": {
+			"event_booking_platform": "public/css/event_booking.css"
+		}
+	}
+}

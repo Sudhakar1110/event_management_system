@@ -118,6 +118,7 @@ portal_menu_items = [
 # ──────────────────────────────────────────
 # JS / CSS Assets
 # ──────────────────────────────────────────
+# App-wide assets — included on every page (Desk + portal)
 app_include_css = "/assets/event_booking_platform/css/event_booking.css"
 app_include_js  = "/assets/event_booking_platform/js/event_booking_platform.js"
 
