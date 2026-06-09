@@ -1,9 +1,9 @@
 [project]
-name = "event_management_system"
+name = "event_booking_platform"
 authors = [
     { name = "sudhakar", email = "sudhakarsathiyamoorthy@gmail.com"}
 ]
-description = "Event Booking Platform (Wedding Halls, Photographers, Decorators, Caterers, Makeup Artists, Event Planners, DJs, Flower Decorators, Transportation Services, and other event-related vendors"
+description = "Event Booking Platform for Frappe/ERPNext v15 - Complete Event Booking Marketplace with Vendor Management, Customer Portal, Booking Management, Payment Processing"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
