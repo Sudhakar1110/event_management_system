@@ -1,25 +1,65 @@
-# Dependencies
-node_modules/
-package-lock.json
-
-# Build output
-dist/
+# ──────────────────────────────────────────
+# Frappe / ERPNext
+# ──────────────────────────────────────────
 *.pyc
 __pycache__/
 *.pyo
+*.egg-info/
+dist/
+*.egg
+.eggs/
+*.so
 
-# Environment
+# Bench / Sites
+sites/
+sites/*/
+apps/
+env/
+envs/
+env_proxy/
+
+# Node.js (Frappe build)
+node_modules/
+package-lock.json
+yarn.lock
+.yarn/
+
+# Assets (Frappe build output)
+event_booking_platform/event_booking_platform/public/dist/
+
+# ──────────────────────────────────────────
+# Environment & Secrets
+# ──────────────────────────────────────────
 .env
 .env.local
-*.egg-info/
+.env.*.local
+*.pem
+*.key
 
-# Editor
+# ──────────────────────────────────────────
+# Editor / IDE
+# ──────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
-tags
-
-# OS
+*.swn
+*~
 .DS_Store
 Thumbs.db
+
+# ──────────────────────────────────────────
+# OS / System
+# ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# ──────────────────────────────────────────
+# Build / Artifacts
+# ──────────────────────────────────────────
+*.sqlite3
+*.bak
+*.orig
+tags
