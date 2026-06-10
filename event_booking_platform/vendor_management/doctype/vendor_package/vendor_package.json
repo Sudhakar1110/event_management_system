@@ -4,6 +4,7 @@
  "creation": "2024-01-01 00:00:00",
  "doctype": "DocType",
  "engine": "InnoDB",
+ "istable": 1,
  "field_order": ["vendor", "package_name", "is_active", "column_break_1", "price", "duration", "max_guests", "section_description", "description", "inclusions", "section_items", "items"],
  "fields": [
   {
