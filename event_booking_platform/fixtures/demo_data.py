@@ -382,6 +382,9 @@ def load_demo_data():
         packages = _load_packages(vendors)
         print("  ✅ Created {} Vendor Packages".format(len(packages)))
 
+        package_links = _load_package_links(vendors, packages)
+        print("  ✅ Created {} Vendor Profile Package Links".format(len(package_links)))
+
         saved_vendors = _load_saved_vendors(customers, vendors)
         print("  ✅ Created {} Saved Vendors".format(len(saved_vendors)))
 
@@ -765,6 +768,28 @@ def _get_package_items(pkg_idx, total_price):
 
     return items
 
+
+# ------------------------------------------------------------------------------
+# 5b. VENDOR PROFILE PACKAGE LINKS
+# ------------------------------------------------------------------------------
+
+def _load_package_links(vendors, packages):
+    """Create Vendor Profile Package Link records to bridge the relationship."""
+    links = []
+    pairs_used = set()
+    for vendor in vendors:
+        vendor_pkgs = [p for p in packages if frappe.db.get_value("Vendor Package", p, "vendor") == vendor]
+        for pkg in vendor_pkgs:
+            pair = (vendor, pkg)
+            if pair in pairs_used:
+                continue
+            pairs_used.add(pair)
+            vp_doc = frappe.get_doc("Vendor Profile", vendor)
+            vp_doc.append("packages", {"vendor_package": pkg})
+            vp_doc.flags.ignore_workflow = True
+            vp_doc.save()
+            links.append(pkg)
+    return links
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 6. SAVED VENDORS

@@ -211,7 +211,7 @@
    "fieldname": "packages",
    "fieldtype": "Table",
    "label": "Packages",
-   "options": "Vendor Package"
+   "options": "Vendor Profile Package Link"
   },
   {
    "fieldname": "section_gallery",

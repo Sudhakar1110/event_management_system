@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "autoname": "format:{vendor_package}",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["vendor_package", "package_name", "price", "is_active"],
+ "fields": [
+  {
+   "fieldname": "vendor_package",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vendor Package",
+   "options": "Vendor Package",
+   "reqd": 1
+  },
+  {
+   "fieldname": "package_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Package Name",
+   "fetch_from": "vendor_package.package_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price",
+   "fetch_from": "vendor_package.price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active",
+   "fetch_from": "vendor_package.is_active",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Vendor Management",
+ "name": "Vendor Profile Package Link",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
