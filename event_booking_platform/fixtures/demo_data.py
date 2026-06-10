@@ -330,6 +330,28 @@ def safe_insert(doc_dict, ignore_permissions=True):
 
 
 # ──────────────────────────────────────────────────────────────────────────────
+# CLEANUP — Remove orphaned records from previous failed runs
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _cleanup_orphaned_data():
+    """Remove orphaned Event Service Requirement records from previous failed runs.
+
+    Event Service Requirement uses autoname format:{parent}-{service_category}.
+    When child records are created inline with the parent doc during insert(),
+    the {parent} field resolves to an empty string, producing names like
+    '-Banquet Hall' instead of 'EVT-2026-00001-Banquet Hall'. These orphaned
+    names collide globally across all Event Requests on re-runs.
+
+    Only this specific table is affected. Other tables either rolled back
+    cleanly or are idempotent via frappe.db.exists checks.
+    """
+    frappe.db.sql(
+        """DELETE FROM `tabEvent Service Requirement`
+            WHERE name LIKE '-%'"""
+    )
+
+
+# ──────────────────────────────────────────────────────────────────────────────
 # MAIN LOAD FUNCTION
 # ──────────────────────────────────────────────────────────────────────────────
 
@@ -340,6 +362,12 @@ def load_demo_data():
     print("\n" + "=" * 60)
     print("  🎯 Loading Event Booking Platform Demo Data")
     print("=" * 60)
+
+    # Clean up orphaned records from previous failed runs
+    # Event Service Requirement uses format:{parent}-{service_category} autoname
+    # where {parent} is empty during inline child creation, causing PK conflicts
+    _cleanup_orphaned_data()
+    print("  ✅ Cleaned up orphaned records from previous runs")
 
     try:
         _load_config()
