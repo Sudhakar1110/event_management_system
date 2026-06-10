@@ -798,7 +798,13 @@ def _load_saved_vendors(customers, vendors):
 # ──────────────────────────────────────────────────────────────────────────────
 
 def _load_event_requests(customers):
-    """Create event requests with services required."""
+    """Create event requests with services required.
+
+    Note: Event Service Requirement uses autoname format:{parent}-{service_category}.
+    The {parent} field resolves to empty when child table records are passed inline
+    during insert(). To work around this, we insert the Event Request first without
+    child records, then append() them afterward so the parent field is correctly set.
+    """
     requests = []
     event_type_docs = frappe.get_all("Event Type", pluck="name")
 
@@ -821,23 +827,8 @@ def _load_event_requests(customers):
 
         event_title = choice(EVENT_TITLES) + " #{}".format(i + 1)
 
-        # Services required
-        services = []
-        vendor_cats = frappe.get_all("Vendor Category", pluck="name")
-        num_services = randint(3, 7)
-        for s in range(num_services):
-            if s < len(vendor_cats):
-                vcat = vendor_cats[s]
-            else:
-                vcat = choice(vendor_cats)
-            services.append({
-                "service_category": vcat,
-                "vendor_category": vcat,
-                "budget": float(budget * uniform(0.05, 0.3)),
-                "is_required": 1 if s < 4 else 0,
-                "notes": choice(["Need premium service", "Budget friendly", "Looking for best", "Must be available", ""]),
-            })
-
+        # Insert Event Request WITHOUT services_required (child table)
+        # to avoid autoname {parent} resolving to empty
         req_name = safe_insert({
             "doctype": "Event Request",
             "event_title": event_title,
@@ -860,8 +851,27 @@ def _load_event_requests(customers):
                 "Focus on high-quality food and beverage service.",
                 "Want a beach-themed setup with pastel colors.",
             ])),
-            "services_required": services,
         })
+
+        # Now append child records one by one so the parent field is properly set
+        vendor_cats = frappe.get_all("Vendor Category", pluck="name")
+        num_services = randint(3, 7)
+        req_doc = frappe.get_doc("Event Request", req_name)
+        for s in range(num_services):
+            if s < len(vendor_cats):
+                vcat = vendor_cats[s]
+            else:
+                vcat = choice(vendor_cats)
+            req_doc.append("services_required", {
+                "service_category": vcat,
+                "vendor_category": vcat,
+                "budget": float(budget * uniform(0.05, 0.3)),
+                "is_required": 1 if s < 4 else 0,
+                "notes": choice(["Need premium service", "Budget friendly", "Looking for best", "Must be available", ""]),
+            })
+        req_doc.flags.ignore_workflow = True
+        req_doc.save()
+
         requests.append(req_name)
 
     return requests
